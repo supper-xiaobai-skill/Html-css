@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML标签</title>
+    <base target="_blank">
+</head>
+<body>
+<h2>2020.12.15-16</h2>
+<hr>
+<p>标签讲解 h1-h6 标记标题</p>
+<p>字体大小h1>h6</p>
+<p>企业里面一个界面只有一个h1标签</p>
+<p>浏览器里面标记一段，但是会单独显示一行</p>
+<p>hr标签分割线，单独显示一行</p>
+<hr>
+<p>hr 的/ 在html中可以无，xhtml中有</p>
+<p>ctrl+alt+t对没有标签的元素添加标签</p>
+<p>img标签：告诉浏览器显示一张图片</p>
+<img src="未标题-1.jpg" width="100px" alt="啊啊啊">
+<img src="未标题-2.jpg" width="100px" alt="啊啊啊">
+<p>src表示source 告诉图片地址 img标签不会独占一行</p>
+<p>img标签属性</p>
+<p>height：显示多高
+    wedith：显示多宽
+    如果没有指定，则默认显示图片宽高，
+    如果手动指定宽高，容易导致变形
+    如果想要保证图片比例缩放，则指定宽高的一个值就可以，系统会自动计算对应的另一个值。
+</p>
+<p>
+    title：用于告诉浏览器，鼠标悬停在图片上显示的内容
+    alt：告诉浏览器，当需要显示的图片找不到时，图片所在的位置中指定显示什么
+</p>
+如何在html中换行br标签 <br>
+换行 <br> <br>
+br标签可以多个使用，想要显示多少行，就写多少个br标签 <br>
+由于HTML的作用是来给文本添加语义，br的作用不是另起一行使用，只是单纯在这一段中换行，企业开发中一般不大使用。 一般使用标签来进行换行操作。
+<br><br>
+<p>路径问题（src赋值）：相对路径与绝对路径</p>
+<p>相对路径：从html代码文件所在的文件夹开始寻找</p>
+<p>1.同级文件夹，图片与.html文件存储在一个文件夹下，赋值：直接在引号中输入图片名称</p>
+<p>2.下级文件：存储图片的文件夹和.html文件在同一个文件夹下，赋值：图片文件名/图片名称</p>
+<p>3.上级文件：存储图片的位置与存储代码的文件夹在同一个路径下，赋值：../图片名称，..返回上一级文件夹</p>
+<h3 id="middle">（此处验证锚点跳转，设置id与h标签验证）绝对路径：每次都从指定的盘开始查找</h3>
+<p>注意事项：</p>
+<p>1.路径中不要出现中文 <br>
+    2.路径不要跨盘符 <br>
+    3.在开发中尽可能使用相对路径，因为绝对路径的可移植性不好，/
+</p>
+<p>a标签：控制页面与页面之间的跳转 <br>
+    属性： href="指定跳转的目标界面" <br>
+    每一个a标签都需要有一个href熟悉，否则a标签无效 <br>
+    如果a标签如果指定一个url地址，必须加上https://或http:// <br>
+    a标签还可以跳转到其他界面，地址直接添加对应相对地址的文件名就可以 <br>
+    a标签可以通过设置target属性，跳转到新的页面，默认在原页面打开， <br>
+    target 取值_self(当前页面跳转);_blank(新建界面跳转) <br>
+    title属性，移动到要跳转的界面，提示内容
+</p>
+<a href="https://www.135editor.com/">跳转135编辑器</a>
+<a href="https://www.135editor.com/">a标签也可以对图片跳转
+    <img src="未标题-1.jpg" width="100px"></a>
+<p>base标签：<br>
+    base标签的作用是指定当前网页中所有超链接如何打开 <br>
+    base标签只能写在head标签里面 <br>
+    （单独控制）如果即在head标签中指定target又想要在其他标签实现另一种方式，则可以通过对a标签添加target实现
+</p>
+<p>假链接 <br>
+    当跳转地址/界面并没有做好，则可以利用假链接代替<br>
+    假链接点击之后，并不会跳转 <br>
+    假链接格式：1.# 2.javaScript：</p>
+#的假链接点击会自动回到网页顶部<a href="#" target="_self">假链接</a>（常用来做回到顶部）<br>
+使用假链接需注意单独设置打开方式，必须在当前界面打开
+javascript:点击则不会<a href="javascript:" target="_self">假链接</a>需注意此处：为英文状态，否则容易404
+<p>锚点：<br>
+    设置跳转到当前页面的指定位置 <br>
+    想要通过a标签跳转到指定的位置，则需要告诉a标签一个独一无二的id，
+    这样标签才可以跳转到目标位置。<a href="#middle" target="_self">跳转到锚点位置</a>
+    通过a标签指定的位置，时没有过度动画的，<br>所以如果需要有过度动画，则可以不用a标签 <br>
+    a标签还可以设置跳转到其他界面的指定位置后面添加#+id即可进行跳转
+</p>
+<p>列表标签：列表标签的作用在于给一堆数据添加列表语义，表示这一堆数据是一个整体 <br>
+    <br>html中列表标签的分类 <br>
+    1.无序列表（最多） <br>
+    2.有序列表（最少）<br>
+    3.定义列表（其次）<br>
+    <br>
+    无序列表的作用：给一堆数据添加列表语义，并且一堆数据都没先后之分。
+    <br>什么叫有先后之分：<br>
+    eg：排行榜
+    <br>无序列表格式：ul-unordered list
+</p>
+无序列表使用：<br>
+<ul>
+    <li>北京</li>
+    <li>添加的条目</li>
+    <li>需要添加</li>
+    <li>的条目</li>
+</ul>
+无序列表的注意点: <br>
+1.ul是用来定义列表的，而不是用来设置格式的。<br>
+2.有序列表能做的，无序列表都能做！！<br>
+3.ul标签与li标签是一个组合，一般是一起出现的，所以ul标签中只能看到li标签，不会单独出现 <br>
+4.无序列表的应用：新闻列表、商品列表、导航条 <br>
+<br>
+<a href="列表练习.html"><h4>无序列表作业</h4></a>
+<br>
+<hr>
+<h2>2020.12.18</h2>
+<hr>
+ul标签中最好只放li标签，但是li标签里面可以添加其他的标签
+<h4><a href="列表练习.html#lianxi2">无序列表练习2</a></h4>
+无序列表的li标签除了可以添加其他标签丰富界面，还可以添加ul标签
+<h4><a href="列表练习.html#lianxi3">无序列表练习3</a></h4>
+ul>li*n(n为数字）按下tab自动生成一堆ul标签，并产生定义数量的li标签
+<!--<ul>-->
+<!--    <Li></Li>-->
+<!--    <Li></Li>-->
+<!--    <Li></Li>-->
+<!--    <Li></Li>-->
+<!--    <Li></Li>-->
+<!--</ul>-->
+ul>li*n>h2+ul>li*n生成结构化的ul标签与li标签
+<!--<ul>-->
+<!--    <li>-->
+<!--        <h2></h2>-->
+<!--        <ul>-->
+<!--            <li></li>-->
+<!--            <li></li>-->
+<!--        </ul>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        <h2></h2>-->
+<!--        <ul>-->
+<!--            <li></li>-->
+<!--            <li></li>-->
+<!--        </ul>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        <h2></h2>-->
+<!--        <ul>-->
+<!--            <li></li>-->
+<!--            <li></li>-->
+<!--        </ul>-->
+<!--    </li>-->
+<!--</ul>-->
+<br>
+<p><h3>有序列表</h3> <br>
+添加有先后之分的列表语义
+格式ol—li</p>
+<p>演示</p>
+<ol type="I">
+    <li>男人</li>
+    <li>女人</li>
+    <li>孩子</li>
+</ol>
+<br>
+<h3>定义列表标签：dl</h3>
+<p>定义列表的格式：dl-dt-dd <br>
+    dt与dd的区别：<br>
+    dt定义列表
+    dd用来定义标题对应的描述的</p>
+演示：
+<dl>
+    <dt>dt：北京</dt>
+    <dd>dd：中国首都</dd>
+    <dt>dt：上海</dt>
+    <dd>dd：经济中心</dd>
+</dl>
+定义列表的应用：<br>
+<ol>
+    <li>网站底部的说明</li>
+    <li>图文混排</li>
+</ol>
+定义列表的注意点：
+<ol>
+    <li>dl-dd/dt是一个整体，不会单独出现</li>
+    <li>一个dt对应一个dd</li>
+    <li>dl中只建议放dd/dt，可以通过在dd/dl中添加其他标签来丰富页面</li>
+</ol>
+<h4><a href="列表练习.html#lianxi4">定义列表练习</a></h4>
+<h3>表格标签：table</h3>
+<p>给一堆数据添加表格语义，当数据量非常大的时候，表格这种数据被认为是最清晰的展示</p>
+<table>
+    <tr>
+        <td>table代表整个表格</td>
+    </tr>
+    <tr>
+        <td>表格中的tr表示表格中的一行</td>
+    </tr>
+    <tr>
+        <td>表格中td表示表格中一行中的一个单元格</td>
+    </tr>
+</table>
+表格练习——2行3列的表格 <br>
+表格标签有一个边框属性，默认为0，并不能看到，需要显示则需要添加属性
+<table border="1">
+    <tr>
+        <td>姓名</td>
+        <td>班级</td>
+        <td>学号</td>
+    </tr>
+    <tr>
+        <td>金骁伟</td>
+        <td>17电子二班</td>
+        <td>2017210932</td>
+    </tr>
+</table>
+表格标签最后被div+css格式取代了，表格标签和列表一样，都是一个组合标签，要么一起出现，要么不出现。
+<p>表格标签的属性:
+<ol>
+    <li>宽高属性wedith和height>给table/td使用，默认按照内容尺寸自动调整</li>
+    <li>水平对齐和垂直对齐align>给table、tr和td使用</li>
+    <li>外边距和内边距属性>只能给table使用</li>
+    <li>细线表格：通过指定外边距0实现细线表格是不现实的，通过给tabel设置黑色，表格设置白色，然后调整外边距实现细线表格</li>
+</ol></p>
+<h4><a href="表格练习.html">表格练习：</a></h4>
+表格的结构：
+<p>
+<ol>
+    <li>表格的标题</li>
+    <li>每一列的标题，表头信息</li>
+    <li>主体信息</li>
+    <li>页尾信息</li>
+</ol>
+</p>
+<hr>
+<h2>2020.12.19</h2>
+<br>
+<h4>表格合并</h4>
+<p>水平合并单元格采用colspan属性，想要合并多少哥单元格定义多少个就好，并删除后面的单元格</p>
+<p>垂直合并单元格采用rowspan属性，合并方式同水平合并</p>
+<br>
+<table bgcolor="black" width="500px" height="300px" cellpadding="1px">
+    <tr bgcolor="white">
+        <td colspan="3"></td>
+        <!--        <td></td>-->
+        <!--        <td></td>-->
+    </tr>
+    <tr bgcolor="white">
+        <td rowspan="2"></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr bgcolor="white">
+        <!--        <td></td>-->
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<h3>快速移动选择的代码块</h3>
+CTRL+shift+上下方向键 <br><br>
+shift+回车 在任意行的任意位置快速另起一行
+<h3>表单标签</h3>
+<ol>
+    <li>什么是表单</li>
+    用来收集用户信息的专门标签
+    <li>什么是表单元素</li>
+    表单时HTML中的一些标签,在浏览器中所有的表单都有特殊的外观与功能
+    <li>表单格式</li>
+    form>表单元素>/form
+    <li>常见的表单元素-input</li>
+    <ol type="I">
+        <li>input标签:input标签有一个type属性,通常有:text(明文输入框),password(暗文输入框,不显示内容)</li>
+        <li>input标签还可以设置默认值,value属性,可以添加初始化内容.</li>
+        <li>input的type属性还可以设置单选框:radio,可以设置只选一个为所有的复选框添加name属性,可以设置默认选中:checked</li>
+        <li>方框多选框:type:checkbox</li>
+        <li>按钮设置:button 配合js来实现一系列效果-还可以通过设置图片来设置按钮,type="image" src="图片地址" <br>还可以通过reset设置重置按钮,默认叫重置,可以通过value修改默认值</li>
+        <li>提交按钮:submit,作用:将表单中的数据提交到远程服务器,如果要实现这个功能,需要告诉需要提交哪些数据与提交到哪 <br>
+            form标签中有一个action属性,可以通过设置action提交数据到服务器,通过对input添加name属性,来告诉提交哪些信息
+        </li>
+        <li>type的hidden 隐藏域:用于收集一些隐私信息,悄悄咪咪的信息</li>
+        <li>input和输入框绑定在一起,聚焦内容:默认情况下文字并不会和输入框有练习,如果想点击文字,对应的输入框可以输入内容,此时使用lable标签</li>
+        <ol type="a">
+            <li>设置label标签</li>
+            <li>为需要绑定的input标签添加id属性</li>
+            <li>为label绑定id</li>
+        </ol>
+        <li>待选列表-datalist</li>
+        <ol type="a">
+            <li>设置id属性与input属性通过list绑定</li>
+            <li>datalist下级为option</li>
+            <li>由于大多数浏览器不支持故了解即可</li>
+        </ol>
+        <li>intput标签新增属性由于大部分浏览器不做支持,故了解即可</li>
+    </ol>
+    <li>非input标签</li>
+    <ol>
+        <li>select标签:设置下拉列表,格式:select>option</li>
+        <li>select与datalist的区别:select只能选择,不能输入</li>
+        <li>option标签可以包裹一层optgroup</li>
+    </ol>
+    <li>textarea</li>
+    <ol>
+        <li>可以换行的多行文本输入框</li>
+        <li>默认情况下,输入框可以无限换行,默认也有自己的长宽,可以通过cols设置列数,row设置行数</li>
+    </ol>
+</ol>
+<form action="">
+    <label for="account">账户</label><input type="text" id="account"><br>
+    <label for="pwd">密码</label><input type="password" id="pwd"><br>
+    <input type="text" list="area"></input>
+    <datalist id="area">
+        <option>宁夏</option>
+        <option>北京</option>
+        <option>上海</option>
+        <option>日本</option>
+        <option>法国</option>
+    </datalist>
+    <select name="" id="">
+        <option value="">北京</option>
+        <option value="">上海</option>
+        <option value="">广州</option>
+        <option value="">广西</option>
+        <option value="">新疆</option>
+    </select>
+</form>
+<h3><a href="表单练习.html">表单练习</a></h3>
+<h3 id="video">video标签，src地址</h3>
+<p>播放视频,设置自动播放:autoplay属性，controls属性:添加控制条</p>
+<p>设置占位图片，视频未播放前显示：poster属性</p>
+<p>用于广告视频的循环播放：loop</p>
+<p>预加载视频，避免卡顿：preload，与autoplay冲突</p>
+<p>muted：设置静音</p>
+<p>设置视频长宽格式：width/height</p>
+<video src=""></video>
+<h4>video视频的第二种格式</h4>
+<p>由于视频数据非常重要，所以五大浏览器厂商都不愿意支持别人的视频格式，所以为了兼容，所以w3c推出了第二种格式，用来兼容各大浏览器</p>
+<p>
+    video-source-type <br>
+    source标签中指定给video的标签，那么以后浏览器播放视频时就会选择从这三种标签中，选择一种支持的来播放 <br>
+    指定一个视频的多种格式，适配各类浏览器
+</p>
+<p>常用的三种格式.webp/.mp4/.ogg</p>
+<p>注意点 <ol>
+    <li>想要所有浏览器都通过video标签播放视频，还有一个前提：支持HTML5标签</li>
+    <li>如果浏览器不支持html5的标签，则需要选择js使用</li>
+</ol></p>
+<h3><a href="#video" target="_self">audio标签使用同video标签</a></h3>
+<p>使用注意点：<ol>
+    <li>使用方式同video，功能也类似</li>
+    <li>只有三个标签不能用：height/width/poster</li>
+</ol></p>
+<h3>详情和概要的标签：details-summary</h3>
+<p>作用：主要是用来调整空间问题，无论如何变化，都只会在一个固定的位置展示，用尽可能少的空间显示更多的内容</p>
+<h3>marquee标签：跑马灯效果</h3>
+<p>marquee标签的属性：direction-方向right/left/up/down、scrollamount-设置滚动速度，值越大越快、loop-滚动次数、behavior-设置滚动类型slide/alternate</p>
+<p>marquee还可以设置图片滚动，将img标签包裹到标签中就可以</p>
+<marquee scrollamount="1">122333</marquee>
+<h3>html标签对一部分需要修改样式的标签选择了废弃</h3>
+<p>
+    换行 <br>
+    添加分割线
+<hr>
+    <b>加粗</b>
+    <u>下划线</u>
+    <i>斜体</i>
+    <s>删除线</s>
+</p>
+<h4>在企业开发中，不到万不得已，不用使用这些废弃的标签,如果非要使用，则作为css的钩子来使用</h4>
+<h3>字符实体</h3>
+<ol>
+    <li>空格& nbsp</li>
+    <li><>如何正常显示到文本中？&lt小于符号<;&gt大于符号>；例如可以显示标签&lt;hr&gt;</li>
+    <li>版权符号:&copy</li>
+</ol>
+</body>
+</html>
